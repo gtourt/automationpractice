@@ -1,20 +1,25 @@
 **AUTOMATION PRACTICE TEST FRAMEWORK**
-
+=========================================
 This is a test framework for the www.automationpractice.com.
 
 Prerequisites:
-```
-Maven
-```
+*Java JDK 8 installed
+*Maven
 
-To install the framework:
+To install and test the framework:
+### FIRST WAY
 -Clone the automationpractice repository from github: (https://github.com/gtourt/automationpractice.git)<br />
 -Navigate to the folder where the pom.xml exist (/automationpractice/AutomationTest/)<br />
 -Execute in command line : 
 ```
 mvn test
 ```
+### SECOND WAY
+Open your favourite IDE and import the project as a maven project. Then Run the TestRunner class in :<br />
+'automationpractice/AutomationTest/src/test/java/testSuites/TestRunner.class'
 
+
+## PROPERTIES
 If the user needs to change any properties of the framework execution such as: username, email, password then:
 
 -Navigate to the `automationpractice/AutomationTest/src/test/resources/string.properties`.<br />
