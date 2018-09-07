@@ -1,4 +1,4 @@
-##**AUTOMATION PRACTICE TEST FRAMEWORK**
+**AUTOMATION PRACTICE TEST FRAMEWORK**
 
 This is a test framework for the www.automationpractice.com.
 
@@ -19,6 +19,9 @@ If the user needs to change any properties of the framework execution such as: u
 
 -Navigate to the `automationpractice/AutomationTest/src/test/resources/string.properties`.<br />
     Change username from : `C1yn3T3st` to a username of your preference. Make sure not to include quotes after the `=`.<br />
-    Change password according to the rule above. >(DO NOT INCLUDE "") <br />
-    Change mail according to the rule above. >(DO NOT INCLUDE "") <br />
+    ```
+    DO NOT INCLUDE ""
+    ```
+    Change password according to the rule above.<br />
+    Change mail according to the rule above.<br />
     Any change made in this area should end up in the same exactly format : `user.username.new=Test`
