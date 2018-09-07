@@ -1,4 +1,4 @@
-package testRunner;
+package testSuites;
 
 import cucumber.api.junit.Cucumber;
 import cucumber.api.CucumberOptions;
