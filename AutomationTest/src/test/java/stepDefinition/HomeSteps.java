@@ -13,6 +13,9 @@ public class HomeSteps {
     private final WebDriver driver = StepsHooks.driver;
     private HomePage homePage;
 
+    /**
+     * Constructor of the home steps which initializes the driver.
+     */
     public HomeSteps() {
         homePage = new HomePage(driver);
     }

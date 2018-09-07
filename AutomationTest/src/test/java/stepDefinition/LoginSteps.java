@@ -11,19 +11,24 @@ public class LoginSteps {
 
     private final WebDriver driver = StepsHooks.driver;
     private LoginPage loginPage;
+    private static final String EMAIL = StepsHooks.p.getProperty("user.email");
+    private static final String PASSWORD = StepsHooks.p.getProperty("user.password");
 
+    /**
+     * Constructor of the login steps which initializes the driver.
+     */
     public LoginSteps() {
         loginPage = new LoginPage(driver);
     }
 
     @When("^user enters Username$")
     public void setUsername() throws Throwable {
-        loginPage.setUsernameFieldText("someone@example.com");
+        loginPage.setUsernameFieldText(EMAIL);
     }
 
     @When("^user enters Password$")
     public void setPassword() throws Throwable {
-        loginPage.setPasswordFieldText("Password123");
+        loginPage.setPasswordFieldText(PASSWORD);
     }
 
     @When("^user press Submit button$")
@@ -31,7 +36,7 @@ public class LoginSteps {
         loginPage.clickSubmit();
     }
 
-    @When("^user is authorised$")
+    @When("^user is authenticated and has signed in")
     public void authorize() throws Throwable {
         this.setUsername();
         this.setPassword();

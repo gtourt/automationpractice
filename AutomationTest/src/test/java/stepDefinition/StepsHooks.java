@@ -2,18 +2,18 @@ package stepDefinition;
 
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import utilities.PropertiesReader;
 
-import java.io.File;
+import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
 public class StepsHooks {
 
-    private static final String PATH_VAR_NAME = "webdriver.chrome.driver";
-    private static final String DRIVER_FILE_NAME = "chromedriver";
-    private static final String CHROME_MAXIMIZED = "start-maximized";
+    public static Properties p;
     public static WebDriver driver;
 
     /**
@@ -24,14 +24,30 @@ public class StepsHooks {
      */
     @Before
     public void setUp() throws Throwable {
-        // Get file to get the absolute path of it.
-        // Set the absolute path of the file to the system path.
-        File file = new File(getClass().getClassLoader().getResource(DRIVER_FILE_NAME).getFile());
-        System.setProperty(PATH_VAR_NAME, file.getAbsolutePath());
 
+        p = new PropertiesReader().getProperties();
+//        // Get the chrome driver absolute file path
+//        String driverName;
+//        String osFlag = p.getProperty("OS_FLAG");
+//        if (osFlag.equals("LINUX")) {
+//            driverName = p.getProperty("DRIVER_FILE_NAME_LINUX");
+//        } else if (osFlag.equals("MAC")) {
+//            driverName = p.getProperty("DRIVER_FILE_NAME_MAC");
+//        } else {
+//            driverName = p.getProperty("DRIVER_FILE_NAME_WIN");
+//        }
+//        URL url = getClass().getClassLoader().getResource(driverName);
+//        File file = new File(url.getFile());
+//        // Set the file path to the system path
+//        System.setProperty(p.getProperty("PATH_VAR_NAME"), file.getAbsolutePath());
+
+        WebDriverManager.chromedriver().setup();
+
+        // Create Append Chrome Options with chrome maximized
         ChromeOptions options = new ChromeOptions();
-        options.addArguments(CHROME_MAXIMIZED);
+        options.addArguments(p.getProperty("CHROME_MAXIMIZED"));
 
+        // Open the driver and set implicit wait to 10 seconds
         driver = new ChromeDriver(options);
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     }

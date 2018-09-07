@@ -29,16 +29,27 @@ public class LoginPage {
     @FindBy(how = How.ID, using = "SubmitLogin")
     private WebElement submit;
 
+    /**
+     * Clears the old text if exist and send the new one.
+     * @param username : The username to login with.
+     */
     public void setUsernameFieldText(String username) {
         usernameField.clear();
         usernameField.sendKeys(username);
     }
 
+    /**
+     * Clears the old text if exist and send the new one.
+     * @param password : The current password to login with.
+     */
     public void setPasswordFieldText(String password) {
         passwordField.clear();
         passwordField.sendKeys(password);
     }
 
+    /**
+     * Clicks the submit button to login.
+     */
     public void clickSubmit() {
         submit.click();
     }
