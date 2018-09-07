@@ -4,7 +4,6 @@ This is a test framework for the www.automationpractice.com.
 
 Prerequisites:
 -Maven
--Jdk: 
 
 To install the framework:
 -Clone the automationpractice repository from github: https://github.com/gtourt/automationpractice.git
