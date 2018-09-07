@@ -26,20 +26,6 @@ public class StepsHooks {
     public void setUp() throws Throwable {
 
         p = new PropertiesReader().getProperties();
-//        // Get the chrome driver absolute file path
-//        String driverName;
-//        String osFlag = p.getProperty("OS_FLAG");
-//        if (osFlag.equals("LINUX")) {
-//            driverName = p.getProperty("DRIVER_FILE_NAME_LINUX");
-//        } else if (osFlag.equals("MAC")) {
-//            driverName = p.getProperty("DRIVER_FILE_NAME_MAC");
-//        } else {
-//            driverName = p.getProperty("DRIVER_FILE_NAME_WIN");
-//        }
-//        URL url = getClass().getClassLoader().getResource(driverName);
-//        File file = new File(url.getFile());
-//        // Set the file path to the system path
-//        System.setProperty(p.getProperty("PATH_VAR_NAME"), file.getAbsolutePath());
 
         WebDriverManager.chromedriver().setup();
 
