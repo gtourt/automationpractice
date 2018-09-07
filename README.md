@@ -1,8 +1,8 @@
 **AUTOMATION PRACTICE TEST FRAMEWORK**
 =========================================
-This is a test framework for the www.automationpractice.com.
+This is a test framework for the webpage www.automationpractice.com.
 
-Prerequisites:
+Prerequisites:<br />
 *Java JDK 8 installed<br />
 *Maven<br />
 
