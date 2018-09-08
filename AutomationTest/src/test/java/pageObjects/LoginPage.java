@@ -1,4 +1,4 @@
-package PageObjects;
+package pageObjects;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -9,7 +9,7 @@ import org.openqa.selenium.support.PageFactory;
 /**
  * Implements the POM for the Login Page.
  */
-public class LoginPage {
+public class LoginPage extends BasePage {
 
     /**
      * Constructor of login page object. Driver initializes

@@ -1,4 +1,4 @@
-package PageObjects;
+package pageObjects;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -9,10 +9,7 @@ import org.openqa.selenium.support.PageFactory;
 /**
  * Implements the POM for the Home Page.
  */
-public class HomePage {
-
-    private WebDriver driver;
-    private String HOME_PAGE = "http://automationpractice.com";
+public class HomePage extends BasePage {
 
     /**
      * Constructor of home page object. Driver initializes
@@ -26,13 +23,6 @@ public class HomePage {
 
     @FindBy(how = How.LINK_TEXT, using = "Sign in")
     private WebElement signInButton;
-
-    /**
-     * Navigates to home page.
-     */
-    public void navigateToHomePage() {
-        this.driver.get(HOME_PAGE);
-    }
 
     /**
      * Navigates to Login Page clicking the Sign in button.

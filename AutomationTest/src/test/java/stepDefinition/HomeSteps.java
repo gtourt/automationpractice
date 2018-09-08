@@ -1,23 +1,21 @@
 package stepDefinition;
 
-import PageObjects.HomePage;
+import pageObjects.HomePage;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.When;
-import org.openqa.selenium.WebDriver;
 
 /**
  * Implements the steps associated with the home page object.
  */
-public class HomeSteps {
+public class HomeSteps extends BaseSteps{
 
-    private final WebDriver driver = StepsHooks.driver;
     private HomePage homePage;
 
     /**
      * Constructor of the home steps which initializes the driver.
      */
     public HomeSteps() {
-        homePage = new HomePage(driver);
+        homePage = new HomePage(this.driver);
     }
 
     @Given("^user navigates to homepage$")

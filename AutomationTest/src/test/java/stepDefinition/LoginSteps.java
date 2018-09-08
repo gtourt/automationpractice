@@ -1,24 +1,20 @@
 package stepDefinition;
 
-import PageObjects.LoginPage;
+import pageObjects.LoginPage;
 import cucumber.api.java.en.When;
-import org.openqa.selenium.WebDriver;
 
 /**
  * Implements the steps associated with the login page object.
  */
-public class LoginSteps {
+public class LoginSteps extends BaseSteps {
 
-    private final WebDriver driver = StepsHooks.driver;
     private LoginPage loginPage;
-    private static final String EMAIL = StepsHooks.p.getProperty("user.email");
-    private static final String PASSWORD = StepsHooks.p.getProperty("user.password");
 
     /**
      * Constructor of the login steps which initializes the driver.
      */
     public LoginSteps() {
-        loginPage = new LoginPage(driver);
+        loginPage = new LoginPage(this.driver);
     }
 
     @When("^user enters Username$")
@@ -42,5 +38,4 @@ public class LoginSteps {
         this.setPassword();
         this.pressSubmitButton();
     }
-
 }
