@@ -15,4 +15,5 @@ Feature: Purchase Feature
     And user is on order summary and confirms
     And user navigates to his account page
     And user navigates to his orders
-#    Then order page is displayed
+    Then orders page is displayed
+    And the order with the current date exist

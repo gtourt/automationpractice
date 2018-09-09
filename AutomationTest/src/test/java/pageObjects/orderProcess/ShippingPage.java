@@ -12,13 +12,13 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 /**
  * Implements the shipping page of the checkout process.
  */
-public class ShippingStepPage extends BasketPage {
+public class ShippingPage extends BasketPage {
 
     /**
      * Constructor of the shipping step page.
      * @param driver
      */
-    public ShippingStepPage(WebDriver driver) {
+    public ShippingPage(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
     }

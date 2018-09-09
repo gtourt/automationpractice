@@ -1,5 +1,6 @@
 package stepDefinition;
 
+import enums.TabNames;
 import pageObjects.HomePage;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.When;
@@ -9,7 +10,7 @@ import cucumber.api.java.en.When;
  */
 public class HomeSteps extends BaseSteps{
 
-    private HomePage homePage;
+    protected HomePage homePage;
 
     /**
      * Constructor of the home steps which initializes the driver.
@@ -26,5 +27,17 @@ public class HomeSteps extends BaseSteps{
     @When("^user press Sign In$")
     public void userPressSignIn() throws Throwable {
         homePage.navigateToLoginPage();
+    }
+
+    @When("^user navigates to his account page$")
+    public void navigateToAccountPage() throws Throwable {
+        homePage.navigateToAccountPage();
+    }
+
+    @When("^user navigates to the (.*) section$")
+    public void navigateToProductType(String productType) throws Throwable {
+        if (productType.equals(TabNames.TSHIRTS.getValue())) {
+            homePage.navigateToTShirtsPage();
+        }
     }
 }

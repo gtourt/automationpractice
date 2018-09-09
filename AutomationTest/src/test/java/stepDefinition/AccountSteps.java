@@ -10,8 +10,8 @@ import org.junit.Assert;
  */
 public class AccountSteps extends BaseSteps {
 
-    private static final String ACCOUNT_EXP_TEXT = StepsHooks.p.getProperty("ACCOUNT_EXP_TEXT");
-    private static final String PAGE_HEADING = StepsHooks.p.getProperty("PAGE_HEADING");
+    private static final String ACCOUNT_EXP_TEXT = StepsHooks.p.getProperty("ACCOUNT_INFO");
+    private static final String PAGE_HEADING = StepsHooks.p.getProperty("ACCOUNT_TITLE");
 
     private AccountPage accountPage;
 
@@ -26,11 +26,6 @@ public class AccountSteps extends BaseSteps {
     public void assert_success_message() throws Throwable {
         Assert.assertEquals(ACCOUNT_EXP_TEXT, accountPage.getAccountInfoText());
         Assert.assertEquals(PAGE_HEADING, accountPage.getPageHeadingText());
-    }
-
-    @When("^user navigates to his account page$")
-    public void navigateToAccountPage() throws Throwable {
-        accountPage.navigateToAccountPage();
     }
 
     @When("^user navigates to his personal information$")

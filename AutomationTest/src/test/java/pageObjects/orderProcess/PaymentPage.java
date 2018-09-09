@@ -10,9 +10,9 @@ import org.openqa.selenium.support.PageFactory;
 /**
  * Implements the payment step page of the payout process.
  */
-public class PaymentStepPage extends BasketPage {
+public class PaymentPage extends BasketPage {
 
-    public PaymentStepPage(WebDriver driver) {
+    public PaymentPage(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
     }

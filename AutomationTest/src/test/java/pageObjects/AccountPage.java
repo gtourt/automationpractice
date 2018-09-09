@@ -34,22 +34,6 @@ public class AccountPage extends BasePage {
     private WebElement pageHeading;
 
     /**
-     * Gets the account information text.
-     * @return String : The text string.
-     */
-    public String getAccountInfoText() {
-        return accountInformationText.getText();
-    }
-
-    /**
-     * Gets the Text of the element with class page heading.
-     * @return String : the text string.
-     */
-    public String getPageHeadingText() {
-        return pageHeading.getText();
-    }
-
-    /**
      * Navigate to personal information page.
      */
     public void navigateToPersonalInformation() {
@@ -64,9 +48,18 @@ public class AccountPage extends BasePage {
     }
 
     /**
-     * Navigates to account page
+     * Gets the account information text.
+     * @return String : The text string.
      */
-    public void navigateToAccountPage() {
-        customerAccountTab.click();
+    public String getAccountInfoText() {
+        return accountInformationText.getText();
+    }
+
+    /**
+     * Gets the Text of the element with class page heading.
+     * @return String : the text string.
+     */
+    public String getPageHeadingText() {
+        return pageHeading.getText();
     }
 }

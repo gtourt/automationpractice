@@ -5,8 +5,10 @@ import cucumber.api.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.support.PageFactory;
 import pageObjects.AccountPage;
+import pageObjects.HomePage;
 import pageObjects.account.PersonalInformationPage;
 import stepDefinition.BaseSteps;
+import stepDefinition.HomeSteps;
 import stepDefinition.StepsHooks;
 
 /**
@@ -17,13 +19,13 @@ public class PersonalInformationSteps extends BaseSteps {
     private static final String CONFIRMATION_MSG = StepsHooks.p.getProperty("CONFIRMATION_MSG");
 
     private PersonalInformationPage personalInformationPage;
-    private AccountPage accountPage;
+    private HomePage homePage;
 
     /**
      * Constructor of the account steps which initializes the driver.
      */
     public PersonalInformationSteps() {
-        accountPage = new AccountPage(this.driver);
+        homePage = new HomePage(this.driver);
         personalInformationPage = new PersonalInformationPage(this.driver);
     }
 
@@ -50,7 +52,7 @@ public class PersonalInformationSteps extends BaseSteps {
 
     @Then("^user can see his name changed in the profile tab$")
     public void checkName() throws Throwable {
-        Assert.assertEquals(USERNAME_NEW, accountPage.getCustomerAccountTabFirstName());
+        Assert.assertEquals(USERNAME_NEW, homePage.getCustomerAccountTabFirstName());
     }
 
 }

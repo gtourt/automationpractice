@@ -13,13 +13,13 @@ import java.util.List;
  * Implements the order summary "stage" page of
  * the basket checkout process.
  */
-public class OrderSummaryStepPage extends BasketPage {
+public class OrderSummaryPage extends BasketPage {
 
     /**
      * Constructor of the order summary page.
      * @param driver
      */
-    public OrderSummaryStepPage(WebDriver driver) {
+    public OrderSummaryPage(WebDriver driver) {
         PageFactory.initElements(driver, this);
     }
 

@@ -9,15 +9,17 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 /**
- * Implements the address stage of the payment process.
+ * Summary Step of the basket checkout process.
  */
-public class AddressStepPage extends BasketPage {
+public class SummaryPage extends BasketPage {
+
+    private static final String checkoutXpath = "/html/body/div/div[2]/div/div[3]/div/p[2]/a[1]";
 
     /**
-     * Constructor of address page.
-     * @param driver : The web driver
+     * Constructor of the SummaryStepPage.
+     * @param driver
      */
-    public AddressStepPage(WebDriver driver) {
+    public SummaryPage(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
     }
@@ -26,7 +28,7 @@ public class AddressStepPage extends BasketPage {
     public void proceedToCheckout() {
         JavascriptExecutor js = (JavascriptExecutor)driver;
         js.executeScript("window.scrollTo(0, document.body.scrollHeight)");
-        WebElement element = new WebDriverWait(driver, 5).until(ExpectedConditions.elementToBeClickable(By.name("processAddress")));
+        WebElement element = new WebDriverWait(driver, 5).until(ExpectedConditions.elementToBeClickable(By.xpath(checkoutXpath)));
         element.click();
     }
 }

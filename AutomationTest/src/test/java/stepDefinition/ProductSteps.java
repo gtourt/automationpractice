@@ -19,13 +19,6 @@ public class ProductSteps extends BaseSteps {
         productPage = new ProductPage(this.driver);
     }
 
-    @When("^user navigates to the (.*) section$")
-    public void navigateToProductType(String productType) throws Throwable {
-        if (productType.equals(TabNames.TSHIRTS.getValue())) {
-            productPage.navigateToTShirtsPage();
-        }
-    }
-
     @When("^user picks the (.*) product of the list$")
     public void pickProduct(String productName) throws Throwable {
         productPage.addProductToCart(productName);
