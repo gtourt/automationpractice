@@ -11,6 +11,9 @@ import utilities.PropertiesReader;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
+/**
+ * Implements hooks for the executed steps.
+ */
 public class StepsHooks {
 
     public static Properties p;

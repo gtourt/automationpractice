@@ -13,6 +13,8 @@ import pageObjects.BasePage;
  */
 public class AccountOrdersPage extends BasePage {
 
+    private static final String dateXpath = "//td[@class='history_date bold']";
+
     /**
      * Constructor of the account orders page
      * @param driver : The web driver
@@ -51,6 +53,6 @@ public class AccountOrdersPage extends BasePage {
      * and listed.
      */
     public String getLastOrdersDate() {
-        return firstItem.findElement(By.xpath("//td[@class='history_date bold']")).getText();
+        return firstItem.findElement(By.xpath(dateXpath)).getText();
     }
 }

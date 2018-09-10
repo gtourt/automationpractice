@@ -16,7 +16,7 @@ import stepDefinition.StepsHooks;
  */
 public class PersonalInformationSteps extends BaseSteps {
 
-    private static final String CONFIRMATION_MSG = StepsHooks.p.getProperty("CONFIRMATION_MSG");
+    private static final String CONFIRMATION_MSG = StepsHooks.p.getProperty("PI_CONFIRMATION_MSG");
 
     private PersonalInformationPage personalInformationPage;
     private HomePage homePage;
@@ -29,14 +29,14 @@ public class PersonalInformationSteps extends BaseSteps {
         personalInformationPage = new PersonalInformationPage(this.driver);
     }
 
-    @When("^user changes his first name$")
-    public void changeFirstName() throws Throwable {
-        personalInformationPage.updateFirstnameField(USERNAME_NEW);
+    @When("^user changes his first name to (.*)$")
+    public void changeFirstName(String firstName) throws Throwable {
+        personalInformationPage.updateFirstnameField(firstName);
     }
 
-    @When("^user types his current password$")
-    public void typeCurrentPassword() throws Throwable {
-        personalInformationPage.setCurrentPassword(PASSWORD);
+    @When("^user types his current password (.*)$")
+    public void typeCurrentPassword(String password) throws Throwable {
+        personalInformationPage.setCurrentPassword(password);
     }
 
     @When("^user press save in personal information menu$")
@@ -49,10 +49,4 @@ public class PersonalInformationSteps extends BaseSteps {
         Assert.assertEquals(CONFIRMATION_MSG, personalInformationPage.getConfirmationMessage().getText());
         Assert.assertTrue(personalInformationPage.getConfirmationMessage().isDisplayed());
     }
-
-    @Then("^user can see his name changed in the profile tab$")
-    public void checkName() throws Throwable {
-        Assert.assertEquals(USERNAME_NEW, homePage.getCustomerAccountTabFirstName());
-    }
-
 }

@@ -6,8 +6,7 @@ import pageObjects.orderProcess.SummaryPage;
 import stepDefinition.BaseSteps;
 
 /**
- * Implements the product summary steps.
- * Summary stage of the checkout process.
+ * Implements the product summary step of the checkout process.
  */
 public class SummarySteps extends BaseSteps {
     private SummaryPage summaryPage;

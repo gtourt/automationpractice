@@ -32,7 +32,7 @@ public class OrderSummaryPage extends BasketPage {
     public void clickConfirmButton() {
         for (WebElement element : confirmButtons) {
             if (element.findElement(By.tagName("span")).getText().equals("I confirm my order")) {
-                element.click();
+//                element.click();
                 break;
             }
         }

@@ -6,15 +6,14 @@ import pageObjects.orderProcess.PaymentPage;
 import stepDefinition.BaseSteps;
 
 /**
- * Implements the payment steps.
- * Payment steps of the checkout process.
+ * Implements the payment step of the checkout process.
  */
 public class PaymentSteps extends BaseSteps {
 
     private PaymentPage paymentPage;
 
     /**
-     * Constructor of PaymentSteps
+     * Constructor of Payment Steps
      */
     public PaymentSteps() {
         paymentPage = new PaymentPage(driver);

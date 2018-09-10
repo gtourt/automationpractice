@@ -25,8 +25,9 @@ public class AddressPage extends BasketPage {
     @Override
     public void proceedToCheckout() {
         JavascriptExecutor js = (JavascriptExecutor)driver;
-        js.executeScript("window.scrollTo(0, document.body.scrollHeight)");
-        WebElement element = new WebDriverWait(driver, 5).until(ExpectedConditions.elementToBeClickable(By.name("processAddress")));
+        js.executeScript(SCROLL_TO_EOD);
+        WebElement element = new WebDriverWait(driver, 5)
+            .until(ExpectedConditions.elementToBeClickable(By.name("processAddress")));
         element.click();
     }
 }

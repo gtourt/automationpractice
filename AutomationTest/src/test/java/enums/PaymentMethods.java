@@ -1,5 +1,8 @@
 package enums;
 
+/**
+ * Enum to list the payment methods available.
+ */
 public enum PaymentMethods {
 
     BANK_WIRE("BY BANK WIRE"),

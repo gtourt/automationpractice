@@ -1,10 +1,12 @@
 Feature: Purchase Feature
-  Make a purchase when logged in
+  In order to give the customer the possibility to see his orders,
+  as a customer,
+  I should be able to see my order in the basket.
 
-  Scenario: Login as an autheticated user and make an t-shirt order
+  Scenario Outline: Ensure that my order is placed.
     Given user navigates to homepage
     And user press Sign In
-    And user is authenticated and has signed in
+    And user is authenticated as <username> with password <password>  and has signed in
     And user navigates to the T-SHIRTS section
     When user picks the Faded Short Sleeve T-shirts product of the list
     And user proceeds to checkout
@@ -17,3 +19,7 @@ Feature: Purchase Feature
     And user navigates to his orders
     Then orders page is displayed
     And the order with the current date exist
+
+    Examples:
+      | username                    | password    |
+      | test@seleniumwebdriver.com  | Password123 |

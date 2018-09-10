@@ -8,6 +8,8 @@ import stepDefinition.StepsHooks;
  */
 public abstract class BasePage {
 
+    private static final String WEBPAGE_URL = "WEBPAGE_URL";
+    protected static final String SCROLL_TO_EOD = "window.scrollTo(0, document.body.scrollHeight)";
     protected WebDriver driver;
 
     /**
@@ -19,7 +21,7 @@ public abstract class BasePage {
      * Navigates to home page.
      */
     public void navigateToHomePage() {
-        this.driver.get(StepsHooks.p.getProperty("webpage"));
+        this.driver.get(StepsHooks.p.getProperty(WEBPAGE_URL));
     }
 
 }

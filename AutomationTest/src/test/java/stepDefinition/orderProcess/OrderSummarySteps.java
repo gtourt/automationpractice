@@ -6,7 +6,7 @@ import pageObjects.orderProcess.OrderSummaryPage;
 import stepDefinition.BaseSteps;
 
 /**
- * Implements the steps of the order summary basket stage.
+ * Implements the order summary step of the checkout process.
  */
 public class OrderSummarySteps extends BaseSteps {
 
@@ -19,7 +19,7 @@ public class OrderSummarySteps extends BaseSteps {
         orderSummaryPage = new OrderSummaryPage(driver);
     }
 
-    @When("^user is on order summary and confirms")
+    @When("^user is on order summary and confirms$")
     public void isOnOrderSummaryAndConfirms() {
         if (orderSummaryPage.isOnPurchaseStage(PurchaseStages.ORDER_SUMMARY.getValue())) {
             orderSummaryPage.clickConfirmButton();

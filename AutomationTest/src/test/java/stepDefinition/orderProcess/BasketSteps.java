@@ -5,20 +5,20 @@ import cucumber.api.java.en.When;
 import stepDefinition.BaseSteps;
 
 /**
- * Implements the steps of the basket.
+ * Implements the basket steps.
  */
 public class BasketSteps extends BaseSteps {
 
     private BasketPage basketPage;
 
     /**
-     * Constructor of BasketSteps
+     * Constructor of Basket Steps
      */
     public BasketSteps() {
         basketPage = new BasketPage(this.driver);
     }
 
-    @When("^user proceeds to checkout")
+    @When("^user proceeds to checkout$")
     public void proceedToCheckout() throws Throwable {
         basketPage.proceedToCheckout();
     }

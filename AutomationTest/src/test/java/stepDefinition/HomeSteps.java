@@ -1,6 +1,8 @@
 package stepDefinition;
 
+import cucumber.api.java.en.Then;
 import enums.TabNames;
+import org.junit.Assert;
 import pageObjects.HomePage;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.When;
@@ -39,5 +41,10 @@ public class HomeSteps extends BaseSteps{
         if (productType.equals(TabNames.TSHIRTS.getValue())) {
             homePage.navigateToTShirtsPage();
         }
+    }
+
+    @Then("^user can see his name (.*) in the profile tab$")
+    public void checkName(String username) throws Throwable {
+        Assert.assertEquals(username, homePage.getCustomerAccountTabFirstName());
     }
 }

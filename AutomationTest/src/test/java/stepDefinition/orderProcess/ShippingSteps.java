@@ -6,8 +6,7 @@ import pageObjects.orderProcess.ShippingPage;
 import stepDefinition.BaseSteps;
 
 /**
- * Implements the steps of the shipping stage.
- * Shipping stage of the checkout process.
+ * Implements the shipping step of the checkout process.
  */
 public class ShippingSteps extends BaseSteps {
     private ShippingPage shippingPage;
@@ -24,7 +23,7 @@ public class ShippingSteps extends BaseSteps {
         shippingPage.checkTermsCheckbox();
     }
 
-    @When("^user is on shipping and agrees to terms and proceeds")
+    @When("^user is on shipping and agrees to terms and proceeds$")
     public void isOnShippingAndProceed() throws Throwable {
         if (shippingPage.isOnPurchaseStage(PurchaseStages.SHIPPING.getValue())) {
             this.agreeToTerms();

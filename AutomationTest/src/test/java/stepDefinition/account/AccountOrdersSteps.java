@@ -32,7 +32,7 @@ public class AccountOrdersSteps extends BaseSteps {
         Assert.assertEquals(TITLE, accountOrdersPage.getPageHeadingText());
     }
 
-    @Then("^the order with the current date exist")
+    @Then("^the order with the current date exist$")
     public void assertOrderPlaced() {
         String date = LocalDateTime.now().format(DateTimeFormatter.ofPattern("dd/MM/yyyy"));
         Assert.assertEquals(date, accountOrdersPage.getLastOrdersDate());
