@@ -4,7 +4,7 @@ Feature: Account Feature
   as a user,
   I should be able to update my first name
 
-  Scenario Outline: Login as an autheticated user and change first name
+  Scenario Outline: Update Personal Information (First Name) in My Account
     Given user navigates to homepage
     And user press Sign In
     And user enters username <username>
@@ -20,4 +20,4 @@ Feature: Account Feature
 
     Examples:
       | username                    | password    | updatedName |
-      | test@seleniumwebdriver.com  | Password123 | Clyne       |
+      | test@seleniumwebdriver.com  | Password123 | Clive       |

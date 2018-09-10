@@ -3,7 +3,7 @@ Feature: Purchase Feature
   as a customer,
   I should be able to see my order in the basket.
 
-  Scenario Outline: Ensure that my order is placed.
+  Scenario Outline: Order T-Shirt (and Verify in Order History)
     Given user navigates to homepage
     And user press Sign In
     And user is authenticated as <username> with password <password>  and has signed in

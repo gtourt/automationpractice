@@ -3,7 +3,7 @@
 This is a test framework for the webpage www.automationpractice.com.
 
 Prerequisites:<br />
-*Java JDK 8 installed<br />
+*Java JDK 1.8.1_181 installed<br />
 *Maven<br />
 
 To install and test the framework:
